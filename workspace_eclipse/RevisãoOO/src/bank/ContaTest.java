@@ -6,16 +6,27 @@ import org.junit.jupiter.api.Test;
 
 public class ContaTest {
 
+	
+		
 	@Test
-	void testContaCorrente() {
+	void  testPolimorfismo() {
+			
+		boolean flagContaCorrenteComoDefault = true;
 		
-		Double saldoEsperado = 100.1;
-		Double saldoObtido = 0.0;
+		Account conta = null;
 		
-		CorrenteAccount contacorrente = new CorrenteAccount();
-		contacorrente.depositar(100.0);
-		contacorrente.rentabilizar();
-		assertEquals(saldoEsperado, contacorrente.saldo);
+		if(flagContaCorrenteComoDefault) {
+			conta = new CorrenteAccount();
+		} else {
+			conta = new AccountPoupanca();
+		}
+		
+		conta.depositar(1000.0);
+		conta.rentabilizar();
+		System.out.println(conta.getClass().getName());
+		System.out.println(conta.saldo);
+		System.out.println(conta);
 	}
+
 	
 }

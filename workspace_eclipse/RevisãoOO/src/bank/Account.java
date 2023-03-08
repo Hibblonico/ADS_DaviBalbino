@@ -13,4 +13,11 @@ public abstract class Account {
 	}
 	
 	abstract void rentabilizar();
+
+	@Override
+	public String toString() {
+		return "Account [saldo=" + saldo + "]";
+	}
+	
+	
 }

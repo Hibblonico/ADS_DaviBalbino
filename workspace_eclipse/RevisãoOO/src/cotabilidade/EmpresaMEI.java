@@ -4,7 +4,9 @@ public class EmpresaMEI implements Tributavel {
 	
 	Double faturamentoMensal;
 
-	public EmpresaMEI() {
+	
+
+	public EmpresaMEI(Double faturamentoMensal) {
 		super();
 		this.faturamentoMensal = faturamentoMensal;
 	}
