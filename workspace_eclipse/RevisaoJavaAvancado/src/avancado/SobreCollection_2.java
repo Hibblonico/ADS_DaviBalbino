@@ -5,6 +5,15 @@ import java.util.Collection;
 
 public class SobreCollection_2 {
 	
+	private static void imprimirStatusDaColecao(Collection<String> engenharias) {
+		if(engenharias.isEmpty()) {
+			System.out.println("Vazio");
+		}
+		else {
+			System.out.println("Tem Elementos");
+		}
+	}
+	
 	public static void main(String[] args) {
 		
 		Collection<String> engenhariasAtuais = new ArrayList<String>();
@@ -21,6 +30,8 @@ public class SobreCollection_2 {
 		engenhariasFuturas.add("Mecânica");
 		engenhariasFuturas.add("Mecatrônica");
 		
+		System.out.println("Engenharias Futuras: " + engenhariasFuturas);
+		
 		
 		Collection<String> todas = new ArrayList<String>();
 		
@@ -29,6 +40,19 @@ public class SobreCollection_2 {
 		
 		System.out.println("Todas engenharias: " + todas);
 		
+		Collection<String> engenharias = new ArrayList<>(todas);
+		
+		System.out.println("Engenharias vazias? " + engenharias.isEmpty());
+		System.out.println("Qtos elementos engenharias tem? " + engenharias.size());
+		
+		imprimirStatusDaColecao(engenharias);
+		
+		System.out.println("Invocando clear()");
+		
+		engenharias.clear();
+		imprimirStatusDaColecao(engenharias);
+		
 	}
+	
 	
 }
