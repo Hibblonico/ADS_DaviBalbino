@@ -34,7 +34,7 @@ public class SobreMap_1 {
 		Collection<Animal> valores = mapaDeAnimais.values();
 		System.out.println(valores);
 		
-		Set<Entry<String, Animal>> setDeEntradas = mapaDeAnimais.entrySet()
+		Set<java.util.Map.Entry<String, Animal>> setDeEntradas = mapaDeAnimais.entrySet();
 	}
 	
 }
