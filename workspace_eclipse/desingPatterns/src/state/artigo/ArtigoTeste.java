@@ -1,6 +1,8 @@
 package state.artigo;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+
+
+import static org.junit.Assert.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
@@ -10,21 +12,21 @@ public class ArtigoTeste {
 	void deveArtigoTransitarDeRascunhoAteAprovado() {
 		GerenteDeSeguranca gerenteDeSeguranca = GerenteDeSeguranca.getInstace();
 		
-		ZzzArtigo artigo  = new ZzzArtigo();
+		Artigo artigo  = new Artigo();
 		
 		//1. Rascunho -> Revisando
 		
 		gerenteDeSeguranca.setUsuarioCorrente("AUTOR");
 		artigo.publicar();
 		
-		assertEquals("REVISANDO", artigo.getEstado());
+		assertTrue(artigo.getEstado() instanceof EstadoRevisando );
 		
 		//2. Revisando -> Aprovado
 		
 		gerenteDeSeguranca.setUsuarioCorrente("MODERADOR");
 		artigo.publicar();
 		
-		assertEquals("APROVADO", artigo.getEstado());
+		assertTrue(artigo.getEstado() instanceof EstadoAprovado);
 		
 		//Imprime o Historico
 		artigo.getLogHistorico().forEach(System.out::println);
